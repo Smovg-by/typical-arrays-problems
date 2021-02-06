@@ -17,7 +17,7 @@ exports.max = function max(array) {
         return 0;
     }
     let max = Math.max(...array);
-    if (max == Infinity || isNaN(max)) {
+    if (max == Infinity || max == -Infinity || isNaN(max)) {
         return 0;
     } else if (typeof max == "number") {
         return max;
