@@ -13,13 +13,17 @@ exports.min = function min(array) {
 };
 
 exports.max = function max(array) {
-    let max = Math.max(...array);
-    if (max == Infinity) {
-        max = 0;
-    } else if (isNaN(max)) {
-        max = 0;
+    if (typeof array == "undefined") {
+        return 0;
     }
-    return max;
+    let max = Math.max(...array);
+    if (max == Infinity || isNaN(max)) {
+        return 0;
+    } else if (typeof max == "number") {
+        return max;
+    } else {
+        return 0;
+    }
 };
 
 exports.avg = function avg(array) {
