@@ -27,12 +27,10 @@ exports.max = function max(array) {
 };
 
 exports.avg = function avg(array) {
-    function avg(array) {
-        let arraySum = array.reduce((sum, item) => sum + item, 0);
-        let avg = arraySum / array.length;
-        if (isNaN(avg)) {
-            avg = 0;
-        }
-        return avg;
+    let arraySum = array.reduce((sum, item) => sum + item, 0);
+    let avg = arraySum / array.length;
+    if (isNaN(avg)) {
+        avg = 0;
     }
+    return avg;
 };
