@@ -1,11 +1,15 @@
 exports.min = function min(array) {
-    let min = Math.min(...array);
-    if (min == Infinity) {
-        min = 0;
-    } else if (isNaN(min)) {
-        min = 0;
+    if (typeof array == "undefined") {
+        return 0;
     }
-    return min;
+    let min = Math.min(...array);
+    if (min == Infinity || isNaN(min)) {
+        return 0;
+    } else if (typeof min == "number") {
+        return min;
+    } else {
+        return 0;
+    }
 };
 
 exports.max = function max(array) {
